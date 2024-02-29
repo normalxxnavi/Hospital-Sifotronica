@@ -9,7 +9,7 @@ function Footer() {
             <p className="text-sm mt-2 hover:text-blue-400 transition duration-300 ease-in-out">Teléfono: <a href="tel:+123456789">+123 456 789</a> | Email: <a href="mailto:info@hospital.com">info@hospital.com</a></p>
             <div className="mt-4">
               <a href="https://github.com/normalxxnavi" className="text-blue-400 no-underline hover:text-white transition duration-300 ease-in-out mr-4">GitHub Desarrollador</a>
-              <a href="github.com/normalxxnavi/Hospital-Sifotronica/" className="text-blue-400 no-underline hover:text-white transition duration-300 ease-in-out">GitHub del Proyecto</a>
+              <a href="https://github.com/normalxxnavi/Hospital-Sifotronica/" className="text-blue-400 no-underline hover:text-white transition duration-300 ease-in-out">GitHub del Proyecto</a>
             </div>
           </div>
         </div>
