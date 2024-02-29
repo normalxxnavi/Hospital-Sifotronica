@@ -13,38 +13,30 @@ async function Navbar() {
                     <Link href={"/"}><img src="/images/logo.svg" alt="Hospital" className="h-12"/></Link>
                     <h1 className="ml-4 text-white transition-colors duration-300 ease-in-out hover:text-black cursor-pointer">Hospital Clinical Sifotronica</h1>
                 </nav>
-                <nav className="secondary-nav flex justify-end px-4 py-2 bg-blue-200">
-                {session
-                    ? <Link className="text-white mr-4 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer" href={"/auth/signout"}>Logout</Link>
-                    :
-                    (<>
-                        <Link className="text-white mr-4 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer" href="/auth/signup">Registro</Link>
-                        <Link className="text-white mr-4 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer" href={"/auth/signin"}>Login</Link>
-                    </>)
-                }
-                {session?.user?.role === 'ADMIN'
-                    ? (
-                        // Si el rol del usuario es 'USER', muestra enlaces a Dashboard y Pacientes
+                <nav className="flex justify-end flex-wrap px-4 py-2 bg-blue-200 sm:flex sm:justify-end">
+                    {session
+                        ? <Link className="text-white mr-4 mb-2 sm:mb-0" href={"/auth/signout"}>Logout</Link>
+                        :
+                        (<>
+                            <Link className="text-white mr-4 mb-2 sm:mb-0" href="/auth/signup">Registro</Link>
+                            <Link className="text-white mr-4 mb-2 sm:mb-0" href={"/auth/signin"}>Login</Link>
+                        </>)
+                    }
+                    {session?.user?.role === 'ADMIN' && (
                         <>
-                            <Link className="text-white mr-4 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer" href={"/admin"}>Admin panel</Link> 
-                            <Link className="text-white mr-4 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer" href={"/pacientes"}>Pacientes</Link>
-                            <Link className="text-white mr-4 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer" href={"/medicos"}>Medicos</Link>
+                            <Link className="text-white mr-4 mb-2 sm:mb-0" href={"/admin"}>Admin panel</Link> 
+                            <Link className="text-white mr-4 mb-2 sm:mb-0" href={"/pacientes"}>Pacientes</Link>
+                            <Link className="text-white mr-4 mb-2 sm:mb-0" href={"/medicos"}>Medicos</Link>
                         </>
-                        )
-                        : ''
-                }
-                {session?.user?.role === 'USER' // Comprueba si el rol del usuario es 'USER'
-                        ? (
-                        // Si el rol del usuario es 'USER', muestra enlaces a Dashboard y Pacientes
+                    )}
+                    {session?.user?.role === 'USER' && (
                         <>
-                            <Link className="text-white mr-4 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer" href={"/dashboard"}>Dashboard</Link>
-                            <Link className="text-white mr-4 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer" href={"/medicos"}>Medicos</Link>
+                            <Link className="text-white mr-4 mb-2 sm:mb-0" href={"/dashboard"}>Dashboard</Link>
+                            <Link className="text-white mr-4 mb-2 sm:mb-0" href={"/medicos"}>Medicos</Link>
                         </>
-                        )
-                        : '' // Si el rol del usuario no es 'USER', no muestra ningún enlace
-                }
-                    <Link className="text-white mr-4 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer" href={"/quienes"}>¿Quienes Somos?</Link>
-                    <Link className="text-white mr-4 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer" href={"/acercaDe"}>Acerca de...</Link>
+                    )}
+                    <Link className="text-white mr-4 mb-2 sm:mb-0" href={"/quienes"}>¿Quienes Somos?</Link>
+                    <Link className="text-white mr-4 mb-2 sm:mb-0" href={"/acercaDe"}>Acerca de...</Link>
                 </nav>
             </div>
         </>
